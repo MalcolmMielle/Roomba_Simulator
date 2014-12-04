@@ -1,0 +1,50 @@
+__________                     __________         
+\______   \ ____   ____   _____\______   \_____   
+ |       _//  _ \ /  _ \ /     \|    |  _/\__  \  
+ |    |   (  <_> |  <_> )  Y Y  \    |   \ / __ \_
+ |____|_  /\____/ \____/|__|_|  /______  /(____  /
+        \/                    \/       \/      \/ 
+        
+Projet de simulateur de Roomba développé par:
+Malcolm Mielle et Mathieu Nassar (ROB4)
+
+
+1 ) Introduction
+
+	Le programme est développé en Java et sa fonction principale est de simuler l'évolution d'un robot dans une pièce.
+Le modèle d'inspiration est le Roomba, robot aspirateur développé par la société américaine iRobot.
+Se basant sur les principes de la programmation orientée objet, le programme permet:
+- La personnalisation des algorithmes de mouvement du robot ;
+- Le développement de librairies graphiques différentes ;
+- La personnalisation de l'environnement (ajout de formes) et du robot (nouveaux capteurs notamment).
+
+2 ) Mise en route
+
+	Le programme est fourni avec une classe de test : Environnement.
+L'exécution du programme demande à l'utilisateur de choisir entre le mode texte seul ou accompagné d'un mode graphique.
+L'étape suivante consiste à choisir entre une pièce prédéfinie ou une pièce aléatoire.
+La validation de ces choix lancera alors le contexte d'exécution impliquant le mouvement du robot.
+Par défaut, le comportement du robot nettoiera la pièce de ses tâches.
+
+3 ) Personnalisation
+
+	L'utilisateur développeur pourra personnaliser le programme en y agissant sur les caractères suivants:
+- Le comportement du robot
+	Pour ajouter un nouveau comportement, il faut dériver la classe Comportement.
+	La méthode "générique" (voir doc) sera appelée par le robot, cette méthode est donc essentielle.
+- Les capteurs du robot
+	L'utilisateur peut créer de nouveaux types de capteurs. Pour cela, il faut commencer par créer une classe héritant de la classe mère "Capteur".
+	En outre, si votre capteur doit implémenter une collision, il sera nécessaire de surcharger la méthode isColliding pour chaque forme.
+	Les formes étant dotées de collisions prédéfinies avec d'autres formes, vous pouvez bien entendu assimiler votre capteur à l'une de ces formes pour ne pas avoir à surcharger isColliding
+- Les formes disponibles
+	L'utilisateur pourra également, s'il le souhaite, ajouter de nouvelles formes. Il suffira pour cela de faire hériter votre classe de la classe mère "Forme".
+	
+4 ) Documentation
+
+Le programme est fourni avec une documentation de chaque classe. N'hésitez pas à la consulter pour le développement de vos applications.
+
+5 ) Contact
+
+En cas de problème technique, veuillez contacter :
+Mathieu Nassar : mathieu.nassar@gmail.com
+Malcolm Mielle : malcolm.mielle@gmail.com

@@ -1,0 +1,907 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="11.5.1">
+  <zoom_level>4</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>364</x>
+      <y>200</y>
+      <w>316</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>/Robot/
+--
+#roue : ArrayList &lt;Roue&gt;
+#capteur : ArrayList &lt;Capteur&gt;
+#post : Posture
+#post_ante : Posture
+#comp : Comportement
+--
++Robot()
++Robot(r1 : Roue, r2 : Roue, capt : ArrayList &lt;Capteur&gt;, post : Posture, comp : Comportement)
+/+deplace(p : Posture) : void/
+/+calculerPosition(objets : ArrayList&lt;Objet&gt;) : Posture/
++getCapteurAnswer(ArrayList&lt;Objet&gt; objet) : int[]
++getCapteur(capteur : Capteur) : int
++addCapteur(capteur : Capteur) : void
++removeCapteur(capteur : Capteur) : void
++setComport(comp : Comportement) : void
++getComport() : Comportement
++setPosture(post : Posture) : void
++getPosture() : Posture
++setPostureA(post : Posture) : void
++getPostureA() : Posture
++toString() : String
+/+paint(g : MonGraphics) : void/
++clone() : Object</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>144</x>
+      <y>272</y>
+      <w>156</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Roue
+--
+-distance : double
+--
++Roue()
++setDistance(distance : double) : void
++getDistance() : double
++clone() : Object
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>268</x>
+      <y>416</y>
+      <w>136</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>/Capteur/
+--
+#pos : Posture
+--
++Capteur()
++Capteur(pos : Posture)
+/+detecter(objet : ArrayList &lt;Objet&gt;) : int/
++getPos() : Posture
++setPos(pos_new : Posture) : void
++toString() : String
++clone() : Object
+/+type() : String/
+/+paint(g : MonGraphics) : void/
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>252</x>
+      <y>564</y>
+      <w>132</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>Capteur_prox
+--
+#distance : double
+#taille_angle : double
+--
++Capteur_prox()
++Capteur_prox(pos : Posture, d : double, t : double)
++detecter(objet : ArrayList&lt;Objet&gt;) : int
++getDistance() : double
++getAngle() : double
++type() : String
++toString() : String
++paint(g : MonGraphics) : void
++clone() : Object</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>364</x>
+      <y>660</y>
+      <w>132</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>Capteur_sal
+--
+
+--
++Capteur_sal()
++Capteur_sal(pos: Posture)
++detecter(objet : ArrayList&lt;Objet&gt;) : int
++collideC(c : Cercle) : boolean
++type() : String
++toString() : String
++paint(g : MonGraphics) : void
++clone() : Object
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>276</x>
+      <y>488</y>
+      <w>20</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>12;12;12;76</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>0</x>
+      <y>164</y>
+      <w>316</w>
+      <h>92</h>
+    </coordinates>
+    <panel_attributes>Roomba
+--
+-diametre : int
+--
++Roomba()
++Roomba(r1 : Roue, r2 : Roue, capt : ArrayList &lt;Capteur&gt;, post : Posture, comp : Comportement, diam : int)
++getDiametre() : int
++setDiametre(d : int) : void
++deplace(p : Posture) : void
++calculerPosition(objets : ArrayList&lt;Objet&gt;) : Posture
++nettoyerTache(objets : ArrayList&lt;Objet&gt;, ind : int) : void
++toString() : String
++paint(g : monGraphics) : void
++clone() : Object</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>288</x>
+      <y>272</y>
+      <w>84</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1= 1 
+m2= n </panel_attributes>
+    <additional_attributes>76;12;12;12</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>304</x>
+      <y>220</y>
+      <w>68</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>60;12;12;12</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>756</x>
+      <y>284</y>
+      <w>200</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>Piece
+--
+-largeur : int
+-longueur : int
+-objets : ArrayList &lt;Objet&gt;
+-rob : Robot
+--
++Piece()
++Piece(lar : int, lon : int)
++Piece(lar : int, lon : int, obj : ArrayList &lt;Objet&gt;, robot : Robot)
++fillAlea() : void
++addObjet(obj : Objet) : void
++addRobot(robot : Robot) : void
++getRobot() : Robot
++removeObjet(ind : int) : void
++getObjet(ind : int) : Objet
++animate() : void
++isReachable(p : Posture) : boolean
++getLargueur() : int
++getLongueur() : int 
++toString() : String
++paint(g : MonGraphics) : void
++clone() : Object</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>324</x>
+      <y>356</y>
+      <w>64</w>
+      <h>68</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1= 1 
+m2= n </panel_attributes>
+    <additional_attributes>56;12;56;32;12;32;12;60</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>300</x>
+      <y>488</y>
+      <w>104</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>12;12;12;56;96;56;96;172</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>596</x>
+      <y>524</y>
+      <w>104</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>/Forme/
+--
+#centre : Point
+--
++Forme();
++Forme(cen : Point)
++getCentre() : Point
++setCentre(p : Point) : void
+/+isColliding(ro : Roomba, post : Posture ) : boolean/
+/+collide(cpt : Capteur_prox) : boolean/
+/+getHomogeneousSize() : int/
+/+reduire() : void/
+/+toString() : String/
+/+paint(g : MonGraphics) : void/
++clone() : Object
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>508</x>
+      <y>664</y>
+      <w>112</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>Cercle
+--
+-diametre : int
+--
++Cercle()
++Cercle(cen : Point, d: int)
++getDiametre() : int
++setDiametre(d : int) : void
++isColliding(ro : Roomba, post : Posture) : boolean
++collide(cpt : Capteur_prox) : boolean
++isColliding(p : Point) : boolean
++getHomogeneousSize() : int
++reduire() : void
++toString() : String
++paint(g : MonGraphics) : void
++clone() : Object</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>596</x>
+      <y>608</y>
+      <w>16</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>12;12;12;56</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>632</x>
+      <y>416</y>
+      <w>108</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Objet
+--
+#forme : Forme
+--
++Objet()
++Objet(f : Forme)
++getForme() : Forme
++isCleanable() : boolean
++isColliding(ro : Roomba, post : Posture) : boolean
++toString() : String
++paint(g : MonGraphics) : void
++clone() : Object
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>696</x>
+      <y>340</y>
+      <w>68</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1= 1
+m2= n</panel_attributes>
+    <additional_attributes>60;12;12;12;12;64;12;76</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>640</x>
+      <y>484</y>
+      <w>20</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1= 1
+m2= 1</panel_attributes>
+    <additional_attributes>12;12;12;40</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>408</x>
+      <y>544</y>
+      <w>144</w>
+      <h>92</h>
+    </coordinates>
+    <panel_attributes>Point
+--
+-x : double
+-y : double
+--
++Point()
++Point(xx : double, yy : double)
++getX() : double
++getY() : double
++setX(x : double) : void
++setY(y : double) : void
++projectionColliding(a : Point, b : Point) : boolean
++toString() : String
++clone() : Object</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>540</x>
+      <y>548</y>
+      <w>64</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1= 1
+m2= n</panel_attributes>
+    <additional_attributes>56;12;12;12</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>528</x>
+      <y>812</y>
+      <w>148</w>
+      <h>92</h>
+    </coordinates>
+    <panel_attributes>Polygone
+--
+-p : ArrayList&lt;Point&gt;
+--
++Polygone(cen : Point, lon : int, hau : int)
++getPoint(ind : int) : Point
++isColliding(ro : Roomba, post : Posture) : boolean
++getHomogeneousSize() : int
++reduire() : void
++collide(cpt : Capteur_prox) : boolean
++toString() : String
++paint(g : MonGraphics) : void
++clone() : Object</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>732</x>
+      <y>760</y>
+      <w>160</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>Rectangle
+--
+-longueur : int
+-largeur : int
+--
++Rectangle()
++Rectangle(cen : Point, lon : int, lar : int)
++getLongueur() : int
++getLargeur() : int
++isColliding(ro : Roomba, post : Posture) : boolean
+#nangle(double a) : double
++collide(cpt : Capteur_prox) : boolean
++collide(cap : Capteur_sal) : boolean
++isColliding(c : Cercle) : boolean
++isColliding(rec : Rectangle) : boolean
++isColliding(p : Point) : boolean
++getHomogeneousSize() : int
++reduire() : void
++toString() : String
++paint(g : MonGraphics) : void
++clone() : Object</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>620</x>
+      <y>608</y>
+      <w>16</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>12;12;12;172;12;204</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>672</x>
+      <y>608</y>
+      <w>64</w>
+      <h>228</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>12;12;12;224;60;224</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>80</x>
+      <y>564</y>
+      <w>144</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Ultrason
+--
+-portee : int
+--
++Ultrason()
++Ultrason(pos : Posture, portee : int)
++getPortee() : int
++setPortee(portee : int) : void
++detecter(objet : ArrayList&lt;Objet&gt;) : int
++type() : String
++toString() : String
++paint(g : MonGraphics) : void
++clone() : Object
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>184</x>
+      <y>708</y>
+      <w>176</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Telemetre
+--
+-hauteur : int
+--
++Telemetre()
++Telemetre(pos : Posture, hauteur : int)
++setHauteur(hauteur : int) : void
++getHauteur() : int
++detecter(objet : ArrayList&lt;Objet&gt;) : int
++type() : String
++toString() : String
++paint(g : MonGraphics) : void
++clone() : Object
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>228</x>
+      <y>488</y>
+      <w>48</w>
+      <h>228</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>40;12;12;12;12;220</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>104</x>
+      <y>428</y>
+      <w>172</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>164;12;12;12;12;136</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>428</x>
+      <y>392</y>
+      <w>160</w>
+      <h>116</h>
+    </coordinates>
+    <panel_attributes>Posture
+--
+-x: double
+-y : double
+-theta : double
+--
++Posture(x : double, y : double, theta : double)
++getX() : double
++getY() : double
++getTheta() : double
++setX(xx : double) : void
++setY(yy : double) : void
++setTheta(thetat : double) : void
++clone() : Object
++rotate(alpha : double) : Posture
++move(d_l : double, d_r : double, dist : double) : Posture
++toString() : String
++normalize_angle ( a : double) : double
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>712</x>
+      <y>532</y>
+      <w>104</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Tache
+--
+--
++Tache()
++Tache(forme : Forme)
++isCleanable() : boolean
++getNetLevel() : int
++nettoyer() : void
++toString() : String
++paint(g: MonGraphics) : void
++clone() : Object
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>720</x>
+      <y>484</y>
+      <w>20</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>12;12;12;48</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>324</x>
+      <y>488</y>
+      <w>120</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1= 1
+m2= 1</panel_attributes>
+    <additional_attributes>12;12;12;24;112;24;112;56</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>492</x>
+      <y>356</y>
+      <w>20</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1= 1
+m2= 1</panel_attributes>
+    <additional_attributes>12;12;12;36</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>668</x>
+      <y>204</y>
+      <w>120</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1= 1
+m2= 1</panel_attributes>
+    <additional_attributes>112;80;112;12;12;12</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>164</x>
+      <y>92</y>
+      <w>216</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>Long_Mur
+--
+--
++Long_Mur()
++cherche_mur()
++longe_mur()
++generique(capteurs : ArrayList&lt;Capteur&gt;, capteursAns : int[]) : Consigne
++toString() : void
++clone() : Object</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>300</x>
+      <y>24</y>
+      <w>220</w>
+      <h>52</h>
+    </coordinates>
+    <panel_attributes>Nettoie
+--
+-flag : int
+-sens : int
+--
++Nettoie()
++generique(capteurs : ArrayList&lt;Capteur&gt;, capteursAns : int[]) : Consigne
++toString() : void
++clone() : Object</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>488</x>
+      <y>84</y>
+      <w>220</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>Utiliser_predef
+--
+--
++Utiliser_prefed()
++lire_map()
++generique(capteurs : ArrayList&lt;Capteur&gt;, capteursAns : int[]) : Consigne
++toString() : void
++clone() : Object</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>384</x>
+      <y>140</y>
+      <w>220</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>/Comportement/
+--
+--
++Comportement()
+/+generique(capteur : ArrayList&lt;Capteur&gt;, capteursAns : int[]) : Consigne/
+/+toString() : String/
++clone() : Object</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>444</x>
+      <y>88</y>
+      <w>52</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>12;52;12;12;44;12</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>412</x>
+      <y>64</y>
+      <w>20</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>12;76;12;12</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>368</x>
+      <y>92</y>
+      <w>40</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>32;48;32;12;12;12</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>412</x>
+      <y>164</y>
+      <w>20</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-
+m1=  1
+m2= 1</panel_attributes>
+    <additional_attributes>12;36;12;12</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>920</x>
+      <y>452</y>
+      <w>116</w>
+      <h>76</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;MonGraphics&gt;&gt;
+--
+
+--
++draw(ro : Roomba) : void
++draw(c : Cercle) : void
++draw(piece : Piece) : void
++draw(rec: rectangle) : void
++draw(tache : Tache) : void
++draw(obj : Objet) : void
++draw(cap : Capteur_sal) : void
++draw(cap : Capteur_sal) : void
++draw(t: Triangle) : void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>864</x>
+      <y>544</y>
+      <w>96</w>
+      <h>124</h>
+    </coordinates>
+    <panel_attributes>MonGraphics2D
+--
+-Graphics2D g2
+-piece : Piece
+--
++MonGraphics2D()
++MonGraphics2D(pi : Piece)
++setPiece(m : Piece) : void
++paint(g : Graphics) : void
++draw(ro : Roomba) : void
++draw(cap : Capteur_sal) : void
++draw(cap : Capteur_prox) : void
++draw(c : Cercle) : void
++draw(r: rectangle) : void
++draw(tache : Tache) : void
++draw(obj : Objet) : void
++draw(piece : Piece) : void
+
++draw(t: Triangle)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>936</x>
+      <y>516</y>
+      <w>20</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>12;12;12;28</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>964</x>
+      <y>544</y>
+      <w>112</w>
+      <h>124</h>
+    </coordinates>
+    <panel_attributes>MonGraphics3D
+--
+Graphics3D g3
+Scene : scene
+--
++MonGraphics3D()
++MonGraphics3D(pi : Piece)
++setPiece(m : Piece) : void
++paint(g : Graphics) : void
++draw(ro : Roomba) : void
++draw(cap : Capteur_sal) : void
++draw(cap : Capteur_prox) : void
++draw(c : Cercle) : void
++draw(r: rectangle) : void
++draw(tache : Tache) : void
++draw(obj : Objet) : void
++draw(piece : Piece) : void
+
++draw(t: Triangle)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>960</x>
+      <y>516</y>
+      <w>20</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>12;12;12;28</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>536</x>
+      <y>0</y>
+      <w>84</w>
+      <h>76</h>
+    </coordinates>
+    <panel_attributes>Consigne
+--
+-consignes : ArrayList&lt;Double&gt;
+--
++Consigne()
++Consigne(cons : ArrayList&lt;Double&gt;)
++size() : int
++getConsigne(i : int) : double
++addConsigne(c : double) : void
++removeConsigne(ind : int) : void
++toString() : String
++clone() : Object</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>996</x>
+      <y>284</y>
+      <w>72</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Environnement
+--
+--
++main(String[]) : void
++initPiece() : Piece
++initPieceAlea() : Piece
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
